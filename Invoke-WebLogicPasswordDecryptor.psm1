@@ -68,7 +68,7 @@ function Invoke-WebLogicPasswordDecryptor
         $ClearText = Invoke-Decrypt3DES -Salt $Salt -EncryptionKey $EncryptionKey -Pass $Pass -DecodedCipherText $DecodedCipherText
     }
 
-    Write-Host 'Password:' $ClearText
+    Write-Output $ClearText
 }
 
 function Invoke-DecryptAES
