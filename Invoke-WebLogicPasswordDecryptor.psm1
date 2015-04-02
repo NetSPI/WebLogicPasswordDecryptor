@@ -61,18 +61,17 @@ function Invoke-WebLogicPasswordDecryptor
         $NumberOfBytes = $BinaryReader.ReadByte()
         $EncryptionKey = $BinaryReader.ReadBytes($NumberOfBytes)
 
-        $ClearText = Decrypt-AES -Salt $Salt -EncryptionKey $EncryptionKey -Pass $Pass -DecodedCipherText $DecodedCipherText
+        $ClearText = Invoke-DecryptAES -Salt $Salt -EncryptionKey $EncryptionKey -Pass $Pass -DecodedCipherText $DecodedCipherText
     }
     else
     {
-        $ClearText = Decrypt-3DES -Salt $Salt -EncryptionKey $EncryptionKey -Pass $Pass -DecodedCipherText $DecodedCipherText
+        $ClearText = Invoke-Decrypt3DES -Salt $Salt -EncryptionKey $EncryptionKey -Pass $Pass -DecodedCipherText $DecodedCipherText
     }
 
-    Write-Host "Password:" $ClearText
-
+    Write-Host 'Password:' $ClearText
 }
 
-function Decrypt-AES
+function Invoke-DecryptAES
 {
     param
     (
@@ -122,7 +121,7 @@ function Decrypt-AES
     [System.Text.Encoding]::ASCII.GetString($ClearText)
 }
 
-function Decrypt-3DES
+function Invoke-Decrypt3DES
 {
     param
     (
