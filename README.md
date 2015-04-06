@@ -1,7 +1,7 @@
-WebLogicPasswordDecryptor
+WebLogic Password Decryptor
 =========
 
-PowerShell script to decrypt WebLogic passwords
+PowerShell script and Java code to decrypt WebLogic passwords
 
 ```
 Import the module
