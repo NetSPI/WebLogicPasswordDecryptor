@@ -20,3 +20,12 @@ Decrypt 3DES
 
 Invoke-WebLogicPasswordDecryptor -SerializedSystemIni C:\SerializedSystemIni.dat -CipherText "{3DES}JMRazF/vClP1WAgy1czd2Q=="
 ```
+
+```
+Java (main method)
+
+WebLogicPasswordDecryptor "C:\SerializedSystemIni.dat" "{AES}8/rTjIuC4mwlrlZgJK++LKmAThcoJMHyigbcJGIztug="
+
+WebLogicPasswordDecryptor "C:\SerializedSystemIni.dat" "{3DES}JMRazF/vClP1WAgy1czd2Q=="
+
+```
