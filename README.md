@@ -22,7 +22,7 @@ Invoke-WebLogicPasswordDecryptor -SerializedSystemIni C:\SerializedSystemIni.dat
 ```
 
 ```
-Java (main method)
+Java
 
 WebLogicPasswordDecryptor "C:\SerializedSystemIni.dat" "{AES}8/rTjIuC4mwlrlZgJK++LKmAThcoJMHyigbcJGIztug="
 
