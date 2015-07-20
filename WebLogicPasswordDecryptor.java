@@ -77,9 +77,9 @@ public class WebLogicPasswordDecryptor {
 
         byte[] iv = new byte[16];
         System.arraycopy(encryptedPassword1, 0, iv, 0, 16);
-        byte[] encryptedPassword2 = new byte[16];
-        System.arraycopy(encryptedPassword1, 16, encryptedPassword2, 0, 16);
-
+        int encryptedPasswordlength = encryptedPassword1.length - 16 ;
+        byte[] encryptedPassword2 = new byte[encryptedPasswordlength];
+        System.arraycopy(encryptedPassword1, 16, encryptedPassword2, 0, encryptedPasswordlength);
         IvParameterSpec ivParameterSpec = new IvParameterSpec(iv);
         Cipher outCipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
         outCipher.init(Cipher.DECRYPT_MODE, secretKeySpec, ivParameterSpec);
